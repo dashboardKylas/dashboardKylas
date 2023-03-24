@@ -72,7 +72,7 @@ body {
 
 .circle-graph .tenant-title {
   font-family: "Nunito Sans";
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #31344b;
 }
@@ -101,14 +101,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
-.circle-graph .tenant-graph-border .tenant-graph {
-  height: 85%;
-  width: 85%;
-  border-radius: 50%;
-  background-color: red;
+.circle-graph .tenant-graph-border .donut-graph {
+  height: 100%;
+  width: 100%;
+  transform: rotate(-40deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.circle-graph .tenant-graph-border .donut-graph .donut-count {
+  position: absolute;
+  transform: rotate(40deg);
+  color: #44476a !important;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center !important;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
 .circle-graph .tenant-graph-offset-holder .last-month-tenant-holder {
   flex: 1;
   height: 100%;
@@ -130,7 +146,7 @@ body {
   color: #44476a !important;
   font-family: "Nunito Sans", sans-serif;
   text-align: center !important;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.3;
   word-wrap: break-word;
@@ -156,7 +172,7 @@ body {
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff !important;
   margin-top: 20px;
   width: 100%;
-  height: 45%;
+  height: 55%;
   align-self: center;
   justify-content: space-between;
   padding: 20px;
@@ -194,7 +210,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   text-align: center !important;
-  font-size: 1.5rem;
+  font-size: 2rem;
   word-wrap: break-word;
   color: #31344b;
 }
@@ -217,8 +233,8 @@ body {
 }
 
 .active-user-offset-holder .user-offset-indicator {
-  height: 1rem;
-  width: 1rem;
+  height: 1.2rem;
+  width: 1.2rem;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -234,7 +250,7 @@ body {
 
 .offset-holder .user-offset-title {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.6;
   color: #44476a;
@@ -272,33 +288,49 @@ body {
 }
 
 .active-user-card .icon-holder {
-  height: 6rem;
-  width: 6rem;
+  height: 8rem;
+  width: 8rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-  padding: 10px;
+  position: relative;
+  box-shadow: rgb(184, 185, 190) 2px 2px 5px inset,
+    rgb(255, 255, 255) -3px -3px 7px inset !important;
+  border: 0.0625rem solid rgb(250, 251, 254) !important;
+  background-color: rgb(230, 231, 238) !important;
 }
 
-.active-user-card .weekly-deal-won-icon-holder {
+.active-user-card .icon-holder::after {
+  content: "";
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.active-user-icon {
+  position: absolute;
+  z-index: 9999;
+}
+
+.active-user-card .weekly-deal-won-icon-holder::after {
   background-color: #2ec3f944;
-
 }
-.active-user-card .monthly-user-icon-holder {
+.active-user-card .monthly-user-icon-holder::after {
   background-color: #626afa25;
 }
 
-.active-user-card .weekly-user-icon-holder {
+.active-user-card .weekly-user-icon-holder::after {
   background-color: #2ec3f92d;
 }
 
-.active-user-card .daily-user-icon-holder {
+.active-user-card .daily-user-icon-holder::after {
   background-color: #ffd90027;
 }
 
-.active-user-card .icon-holder .fa-trophy {
+.active-user-card .icon-holder {
   color: #ffd700;
 }
 
@@ -315,7 +347,7 @@ body {
 }
 
 .daily-active-user-container {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .active-user-card .title-holder {
@@ -323,7 +355,8 @@ body {
   flex-direction: column;
   flex: 1;
   height: 100%;
-  padding: 20px;
+  padding: 4rem;
+  padding-left: 1rem;
   align-items: flex-start;
   justify-content: space-evenly;
 }
@@ -339,10 +372,10 @@ body {
   margin-bottom: 10px;
 }
 .active-user-card .active-user-title {
-    color: #44476a !important;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 400;
-    text-align: center !important;
-    font-size: 1.1rem;
-    word-wrap: break-word;
+  color: #44476a !important;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  text-align: center !important;
+  font-size: 1.6rem;
+  word-wrap: break-word;
 }

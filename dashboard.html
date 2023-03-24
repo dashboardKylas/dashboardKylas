@@ -8,6 +8,11 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <script src="./js/donutty.js"></script>
+    <script src="./js/vanilla.js"></script>
+    <!-- <script defer src="./js/jquery.js"></script> -->
 </head>
 
 <body>
@@ -28,8 +33,8 @@
                     <!-- title container -->
                     <!-- ************************************************************* -->
                     <div class="title-holder">
-                        <span class="tenant-title">Free Tenant Registered</span>
-                        <span class="tenant-span">This Month</span>
+                        <span class="tenant-title">Free Tenants Registered</span>
+                        <!-- <span class="tenant-span">This Month</span> -->
                     </div>
                     <!-- ************************************************************* -->
 
@@ -42,11 +47,12 @@
                         <div class="tenant-graph-border">
                             <!-- actual tenant graph holder -->
                             <!-- ************************************************************* -->
-                            <div class="tenant-graph">
-                                <!-- actual tenant component of erb here -->
+                            <div class="donut-graph" id="donut-graph-free">
                                 <!-- ************************************************************* -->
+                                <span class="donut-count">100</span>
                                 <!-- ************************************************************* -->
                             </div>
+
                             <!-- ************************************************************* -->
                         </div>
                         <!-- ************************************************************* -->
@@ -71,8 +77,8 @@
                     <!-- title container -->
                     <!-- ************************************************************* -->
                     <div class="title-holder">
-                        <span class="tenant-title">Paid Tenant Registered</span>
-                        <span class="tenant-span">This Month</span>
+                        <span class="tenant-title">Paid Tenants Registered</span>
+                        <!-- <span class="tenant-span">This Month</span> -->
                     </div>
                     <!-- ************************************************************* -->
 
@@ -85,12 +91,16 @@
                         <div class="tenant-graph-border">
                             <!-- actual tenant graph holder -->
                             <!-- ************************************************************* -->
-                            <div class="tenant-graph">
-                                <!-- actual tenant component of erb here -->
+                            <div class="donut-graph" id="donut-graph-paid">
+
                                 <!-- ************************************************************* -->
+                                <span class="donut-count">100</span>
                                 <!-- ************************************************************* -->
+
                             </div>
+
                             <!-- ************************************************************* -->
+
                         </div>
                         <!-- ************************************************************* -->
 
@@ -124,7 +134,7 @@
                 <div class="active-user-graph-offset">
                     <!-- active user title -->
                     <!-- ************************************************************* -->
-                    <span class="active-user-title">Active User</span>
+                    <span class="active-user-title">Active Users</span>
                     <!-- ************************************************************* -->
 
                     <!-- active user offset holder -->
@@ -136,7 +146,7 @@
                         <!-- ************************************************************* -->
                         <div class="offset-holder monthly-active-user-holder">
                             <div class="user-offset-indicator monthly-offset-indicator"></div>
-                            <span class="user-offset-title monthly-active-user-title">Monthly Active User</span>
+                            <span class="user-offset-title monthly-active-user-title">Monthly Active Users</span>
                         </div>
                         <!-- ************************************************************* -->
 
@@ -144,7 +154,7 @@
                         <!-- ************************************************************* -->
                         <div class="offset-holder weekly-active-user-holder">
                             <div class="user-offset-indicator weekly-offset-indicator"></div>
-                            <span class="user-offset-title weekly-active-user-title">Weekly Active User</span>
+                            <span class="user-offset-title weekly-active-user-title">Weekly Active Users</span>
                         </div>
                         <!-- ************************************************************* -->
 
@@ -152,7 +162,7 @@
                         <!-- ************************************************************* -->
                         <div class="offset-holder daily-active-user-holder">
                             <div class="user-offset-indicator daily-offset-indicator"></div>
-                            <span class="user-offset-title daily-active-user-title">Daily Active User</span>
+                            <span class="user-offset-title daily-active-user-title">Daily Active Users</span>
                         </div>
                         <!-- ************************************************************* -->
 
@@ -177,12 +187,12 @@
                 </div>
                 <div class="title-holder daily-user-title-holder">
                     <span class="active-user-count daily-active-user-count">200</span>
-                    <span class="active-user-title daily-active-user-title">Weekly Deal Won</span>
+                    <span class="active-user-title daily-active-user-title">Weekly Deals Won</span>
                 </div>
             </div>
             <!-- ************************************************************* -->
 
-            <!-- monthly active user -->
+            <!-- Monthly Active Users -->
             <!-- ************************************************************* -->
             <div class="active-user-card monthly-active-user-container">
                 <div class="icon-holder monthly-user-icon-holder">
@@ -190,13 +200,13 @@
                 </div>
                 <div class="title-holder monthly-user-title-holder">
                     <span class="active-user-count monthly-active-user-count">200K</span>
-                    <span class="active-user-title monthly-active-user-title">Monthly Active User</span>
+                    <span class="active-user-title monthly-active-user-title">Monthly Active Users</span>
                 </div>
             </div>
             <!-- ************************************************************* -->
 
 
-            <!-- weekly active user -->
+            <!-- Weekly Active Users -->
             <!-- ************************************************************* -->
             <div class="active-user-card weekly-active-user-container">
                 <div class="icon-holder weekly-user-icon-holder">
@@ -204,13 +214,13 @@
                 </div>
                 <div class="title-holder weekly-user-title-holder">
                     <span class="active-user-count weekly-active-user-count">800K</span>
-                    <span class="active-user-title weekly-active-user-title">Weekly Active User</span>
+                    <span class="active-user-title weekly-active-user-title">Weekly Active Users</span>
                 </div>
             </div>
             <!-- ************************************************************* -->
 
 
-            <!-- daily active user -->
+            <!-- Daily Active Users -->
             <!-- ************************************************************* -->
             <div class="active-user-card daily-active-user-container">
                 <div class="icon-holder daily-user-icon-holder">
@@ -218,7 +228,7 @@
                 </div>
                 <div class="title-holder daily-user-title-holder">
                     <span class="active-user-count daily-active-user-count">1M</span>
-                    <span class="active-user-title daily-active-user-title">Daily Active User</span>
+                    <span class="active-user-title daily-active-user-title">Daily Active Users</span>
                 </div>
             </div>
             <!-- ************************************************************* -->
@@ -229,5 +239,39 @@
     <!-- ************************************************************* -->
 
 </body>
+
+<script>
+
+    new Donutty("#donut-graph-free", {
+        circle: false,
+        round: true,
+        min: 0,
+        max: 100,
+        value: 70,
+        radius: 100,
+        thickness: 15,
+        padding: 10,
+        color: "green",
+        anchor: "top",
+        dir: "rtl",
+        bg: "transparent",
+    });
+
+    new Donutty("#donut-graph-paid", {
+        circle: false,
+        round: true,
+        min: 0,
+        max: 100,
+        value: 40,
+        radius: 100,
+        thickness: 15,
+        padding: 10,
+        color: "green",
+        anchor: "top",
+        dir: "rtl",
+        bg: "transparent",
+    });
+
+</script>
 
 </html>
